@@ -74,7 +74,25 @@ component ripple_adder is
   
 begin
 	-- PORT MAPS --------------------
-   
+   ripple_adder1_inst: ripple_adder
+        port map(
+            Cin => sw(0),
+            A(0) => sw(1),
+            A(1) => sw(2),
+            A(2) => sw(3),
+            A(3) => sw(4),
+            
+            B(0) => sw(12),
+            B(1) => sw(13),
+            B(2) => sw(14),
+            B(3) => sw(15),
+            
+            S(0) => led(0),
+            S(1) => led(1),
+            S(2) => led(2),
+            S(3) => led(3),
+            Cout => led(15)
+        );
 	
 	-- CONCURRENT STATEMENTS --------
 	led(14 downto 4) <= (others => '0'); -- Ground unused LEDs
